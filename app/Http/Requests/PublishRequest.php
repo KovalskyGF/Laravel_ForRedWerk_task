@@ -26,21 +26,25 @@ class PublishRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'subject' => 'required|min:5|max:50',
+            'subject' => 'required|min:5|max:40',
             'message' => 'required|min:15|max:500',
+            'author' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|min:5|max:15',
         ];
     }
-
+    
 
     public function messages() {
         return [
-            'name.required' => 'Поля имя является обязательным',
-            'email.required' => 'Поля E-mail является обязательным',
-            'subject.required' => 'Поля заголовок является обязательным',
-            'message.required' => 'Поля описание является обязательным'
+            'subject.required' => 'Поле заголовок является обязательным',
+            'message.required' => 'Поле описания является обязательным',
+            'author.required' => 'Поле вашего имени является обязательным',
+            'email.required' => 'Поле E-mail является обязательным',
+            'phone.required' => 'Поле телефон является обязательным'
         ];
     }
+
+
 
 }
