@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+
 Route::get('/point', function () {
     return view('point');
 });
