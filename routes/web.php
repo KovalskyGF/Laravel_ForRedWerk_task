@@ -17,10 +17,13 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+Route::get('/point', function () {
+    return view('point');
+});
+
 Route::get('/publish', function () {
     return view('publish');
 });
 
-Route::get('/point', function () {
-    return view('point');
-});
+
+Route::post('/publish/submit', 'PublishController@submit')->name('contact-form');
